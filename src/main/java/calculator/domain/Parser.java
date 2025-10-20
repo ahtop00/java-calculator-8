@@ -6,7 +6,6 @@ import calculator.util.DefaultDelimiterUtil;
 import java.util.regex.Pattern;
 
 public class Parser {
-
     private static final int CUSTOM_DELIMITER_MARKER_LENGTH = CustomDelimiterUtil.PREFIX.length();
 
     public static String[] parse(String expression) {
