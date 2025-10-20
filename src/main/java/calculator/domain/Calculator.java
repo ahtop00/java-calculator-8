@@ -24,7 +24,7 @@ public class Calculator {
             return 0;
         }
 
-        String[] numberStrings = numbersText.split(delimiters);
+        String[] numberStrings = numbersText.split(delimiters, -1);
 
         return sum(numberStrings);
     }
@@ -65,6 +65,16 @@ public class Calculator {
     }
 
     private int toInt(String numberString) {
-        return Integer.parseInt(numberString);
+        int number;
+        try {
+            number = Integer.parseInt(numberString);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+
+        if (number < 0) {
+            throw new IllegalArgumentException();
+        }
+        return number;
     }
 }
