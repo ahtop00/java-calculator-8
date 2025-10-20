@@ -19,8 +19,7 @@ public class CalculatorController {
         try {
             outputView.printInputPrompt();
 
-            String expression = inputView.open();
-            inputView.close();
+            String expression = inputView.readExpression();
 
             outputView.printResult(calculator.add(expression));
         } catch (IllegalArgumentException e) {
