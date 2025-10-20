@@ -29,7 +29,7 @@ class ApplicationTest extends NsTest {
     @DisplayName("정상: 빈 문자열 입력 시 0을 반환한다")
     void empty_string_returns_zero() {
         assertSimpleTest(() -> {
-            run("");
+            run("\n");
             assertThat(output()).contains("결과 : 0");
         });
     }
