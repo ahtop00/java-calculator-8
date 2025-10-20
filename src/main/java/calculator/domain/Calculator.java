@@ -1,20 +1,17 @@
 package calculator.domain;
 
-import static calculator.util.ConstantUtil.DELIMITERS_INDEX;
-import static calculator.util.ConstantUtil.NUMBERS_TEXT_INDEX;
-
+import calculator.util.ConstantUtil;
 import java.util.Arrays;
 
 public class Calculator {
-
     public int add(String expression) {
         if (expression == null || expression.isBlank()) {
             return 0;
         }
 
         String[] parsedParts = Parser.parse(expression);
-        String numbersText = parsedParts[NUMBERS_TEXT_INDEX];
-        String delimiters = parsedParts[DELIMITERS_INDEX];
+        String numbersText = parsedParts[ConstantUtil.NUMBERS_TEXT_INDEX];
+        String delimiters = parsedParts[ConstantUtil.DELIMITERS_INDEX];
 
         if (numbersText.isEmpty()) {
             return 0;
